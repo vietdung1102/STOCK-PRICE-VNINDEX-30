@@ -41,13 +41,16 @@ Quy trình phân tích dữ liệu trải qua 5 bước :
     Script `price_prediction_2026.py` sử dụng thuật toán hồi quy tuyến tính đa biến và phân tích biên độ lịch sử trên chuỗi thời gian nến tháng để tính toán 3 kịch bản giá cho năm 2026: Giá thấp nhất (Min), Giá trung bình (Avg), và Giá cao nhất (Max).
     
 **Bước 4: Tổng hợp Chiến lược Đồng thuận (Consensus Strategy):**
+
     Script `evaluation_strategy.py` kết hợp điểm số định lượng (tổng hợp thành % Tín hiệu Mua) với xu hướng ML dự phóng để đưa ra kết luận chiến lược bằng ngôn ngữ tự nhiên:
+    
     *   Scoring > 50% + ML Trend Tăng = **Đồng thuận TÍCH CỰC** (Khuyến nghị: Mua gom ở vùng giá chiết khấu cụ thể).
+   
     *   Scoring < 50% + ML Trend Giảm = **Đồng thuận TIÊU CỰC** (Khuyến nghị: Bán giảm tỷ trọng ở các nhịp hồi phục kỹ thuật).
+    
     *   Tín hiệu mâu thuẫn = **Phân kỳ** (Khuyến nghị: Đứng ngoài quan sát).
 **Bước 5: Tích hợp và trực quan hóa Power BI:**
     Liên kết dữ liệu từ PostgreSQL lên Power BI Desktop thông qua cơ chế DirectQuery/Import để hiển thị báo cáo tương tác tự động.
-
 
 ## 4. Phân Tích Chi Tiết Các Trang Dashboard
 
