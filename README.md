@@ -35,9 +35,7 @@ Quy trình phân tích dữ liệu trải qua 5 bước :
     Script `stock_scoring_model.py` tính toán **13 chỉ số sức khỏe** hàng tháng:
     
     *   *8 Chỉ báo kỹ thuật:* RSI (Động lượng), MA20 & EMA (Xu hướng), MACD (Đảo chiều), Bollinger Bands (Biến động), ATR (Biến động thực tế), Volume & OBV (Dòng tiền lũy kế).
-    
     *   *5 Chỉ số tài chính:* P/E, P/B (Định giá), ROE (Sinh lời), NPL (Nợ xấu), CAR (An toàn vốn).
-    
     *   Đầu ra: Gán tín hiệu **Buy/Sell/Neutral** cho từng chỉ số của từng ngân hàng tại kỳ đánh giá.
     
 **Bước 3: Dự phóng khoảng giá bằng Machine Learning:**
@@ -49,10 +47,9 @@ Quy trình phân tích dữ liệu trải qua 5 bước :
     Script `evaluation_strategy.py` kết hợp điểm số định lượng (tổng hợp thành % Tín hiệu Mua) với xu hướng ML dự phóng để đưa ra kết luận chiến lược bằng ngôn ngữ tự nhiên:
     
     *   Scoring > 50% + ML Trend Tăng = **Đồng thuận TÍCH CỰC** (Khuyến nghị: Mua gom ở vùng giá chiết khấu cụ thể).
-   
     *   Scoring < 50% + ML Trend Giảm = **Đồng thuận TIÊU CỰC** (Khuyến nghị: Bán giảm tỷ trọng ở các nhịp hồi phục kỹ thuật).
-    
     *   Tín hiệu mâu thuẫn = **Phân kỳ** (Khuyến nghị: Đứng ngoài quan sát).
+    
 **Bước 5: Tích hợp và trực quan hóa Power BI:**
     Liên kết dữ liệu từ PostgreSQL lên Power BI Desktop thông qua cơ chế DirectQuery/Import để hiển thị báo cáo tương tác tự động.
 
@@ -79,16 +76,39 @@ Gồm 4 Sub-Tabs Sidebar:
 
 ### TRANG 3:  Bảng Tổng Hợp Thị Trường 
 
-Đóng vai trò là công cụ quét nhanh toàn thị trường (Screener) cho 5 mã cổ phiếu ngân hàng mục tiêu (**ACB, VCB, TCB, VPB, TPB**).
+Đóng vai trò là công cụ quét nhanh toàn thị trường cho 5 mã cổ phiếu ngân hàng mục tiêu (**ACB, VCB, TCB, VPB, TPB**).
 
     *   `Symbol`: Mã giao dịch của 5 ngân hàng.
-    *   `Nhóm C.Số Tài Chính (% Buy Fin)`: Tỷ lệ % Mua trung bình từ 5 chỉ số tài chính (P/E, P/B, ROE, NPL, CAR). Hiển thị Badge sắc màu (Xanh lá nếu $\ge 50\%$, Đỏ nếu $< 50\%$).
+    *   `Nhóm C.Số Tài Chính (% Buy Fin)`: Tỷ lệ % Mua trung bình từ 5 chỉ số tài chính (P/E, P/B, ROE, NPL, CAR).
     *   `Nhóm C.Số Kỹ Thuật (% Buy Tech)`: Tỷ lệ % Mua trung bình từ 8 chỉ báo kỹ thuật dài hạn khung Tháng.
     *   `Giá Cuối 2025`: Mốc giá đóng cửa thực tế chốt tại ngày 31/12/2025.
     *   `Giá Dự Đoán Min 2026 & Max 2026`: Biên độ khoảng giá kịch bản xấu nhất (Đỏ) và tốt nhất (Xanh lá) do mô hình ML hồi quy dự báo.
     *   `% Buy (Tổng)`: Tỷ lệ phần trăm Mua tổng hợp từ 13 chỉ tiêu của mô hình Scoring.
     *   `Trend 2026`: Xu hướng biến động giá dự báo năm 2026 (Tăng/Giảm).
     *   `Kết Luận (Action)`: Trạng thái đồng thuận (🟢 Đồng thuận Tích cực, 🔴 Đồng thuận Tiêu cực, 🟡 Phân kỳ) đi kèm **Vùng Mua Gom** (VD: ACB gom mua 21.6k-22.8k) hoặc **Điểm Bán Giảm Tỷ Trọng**.
+
+### TRANG 4,5,6,7,8: Dashboard Phân Tích Cổ Phiếu Chi Tiết (Individual Bank View)
+
+Màn hình chẩn đoán chuyên sâu hiển thị khi chọn tab của từng mã ngân hàng cụ thể (**ACB, VCB, TCB, VPB, TPB**), bao gồm **4 khối Panel chức năng**:
+
+1.  **Panel 1 - Strategy Recommendation (Khối Khuyến Nghị Chiến Lược):**
+    *   *Conclusion Box:* Thể hiện kết luận đồng thuận bằng màu tương ứng (Xanh lá = Đồng thuận Tích cực, Đỏ = Đồng thuận Tiêu cực, Xanh lam = Phân kỳ).
+    *   *Action Box:* Cung cấp khuyến nghị hành động cụ thể, tự động tính toán vùng giá mua gom chiết khấu 5-10% hoặc khuyến nghị quản trị rủi ro.
+      
+2.  **Panel 2 - Scoring Model (Biểu Đồ Doughnut & Bảng Chỉ Số Cụ Thể):**
+    *   *Doughnut Chart:* Biểu đồ vành khăn trực quan hóa tỷ lệ phần trăm **% Buy (Xanh bích)** vs **% Sell (Đỏ)**, với con số % Buy chính giữa.
+    *   *Metric Table:* Bảng chi tiết 13 chỉ tiêu gồm 5 cột: `Criteria` (Tên chỉ số), `Value` (Giá trị thực tế), `Signal` (Badge Buy/Sell/Neutral), `Strength` (Mức độ phần trăm Mua), và `Description` (Mô tả lý do gán điểm).
+      
+3.  **Panel 3 - ML Price Prediction 2026 (Khối Dự Báo Giá Học Máy):**
+    *   *Bar Chart:* Biểu đồ cột trực quan 3 kịch bản giá cho năm 2026: **Min** (Cột đỏ - Rủi ro), **Avg** (Cột xanh lam - Cơ sở), **Max** (Cột xanh lá - Tích cực).
+ 
+4.  **Panel 4 - Trend Analysis Panel (Hệ Thống Lưới 13 Biểu Đồ Động - Grid Charts):**
+    *   *8 Đồ thị Kỹ thuật (Monthly Grid Charts):* Phân tích chuỗi nến Tháng từ **T3/2025 đến T12/2025** của RSI, MA20, EMA20, MACD, BB, ATR, Volume, OBV. Đồ thị đổi màu động theo Signal và đính kèm Signal Badge & Strength Score %.
+    *   *5 Đồ thị Tài chính (5-Year Fundamental Trend Grid):* Phân tích đường diễn biến xu hướng 5 năm **(2021-2025)** cho P/E, P/B, ROE, NPL, CAR, cho phép theo dõi đà tăng trưởng cơ bản của ngân hàng.
+
+## 5. Kết quả và insight thu được
+
+
 
 
 
