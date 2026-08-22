@@ -111,8 +111,10 @@ Mỗi trang hiển thị 1 ngân hàng khác nhau, mỗi trang lại bao gốm c
 Dựa trên việc phân tích như trên, ta có thể đưa ra kết luận về 5 cổ phiếu như sau
 
 🟢 Cơ hội gom mua tối ưu (ACB): ACB là mã duy nhất đạt 🟢 Đồng thuận TÍCH CỰC (Scoring 52% Buy + ML Trend Tăng) nhờ an toàn vốn CAR vững chắc (11.2%), nợ xấu siêu thấp (0.99%) và định giá hợp lý
-🟡 Bẫy định giá & Hiện tượng Phân kỳ (VCB, VPB, TPB): Đà tăng kỹ thuật cuối năm 2025 đẩy P/E & P/B của nhóm này vượt trung bình 5 năm lịch sử $\rightarrow$ Xuất hiện hiện tượng Phân kỳ (Kỹ thuật tăng ngắn hạn nhưng Định giá cơ bản đã đắt) $\rightarrow$ Khuyên nắm giữ hoặc đứng ngoài quan sát, tuyệt đối không mua đuổi giá cao.
-🔴 Cảnh báo rủi ro điều chỉnh (TCB): TCB rơi vào trạng thái 🔴 Đồng thuận TIÊU CỰC (Scoring 48% Buy + ML Trend Giảm, RSI tiệm cận vùng quá mua 66.4) $\rightarrow$ Cảnh báo áp lực điều chỉnh lớn năm 2026, khuyên canh các nhịp kéo hồi để bán giảm tỷ trọng.
+
+🟡 Bẫy định giá & Hiện tượng Phân kỳ (VCB, VPB, TPB): Đà tăng kỹ thuật cuối năm 2025 đẩy P/E & P/B của nhóm này vượt trung bình 5 năm lịch sử. Xuất hiện hiện tượng Phân kỳ (Kỹ thuật tăng ngắn hạn nhưng Định giá cơ bản đã đắt), do đó khuyến nghị nắm giữ hoặc đứng ngoài quan sát, không mua đuổi giá cao.
+
+🔴 Cảnh báo rủi ro điều chỉnh (TCB): TCB rơi vào trạng thái 🔴 Đồng thuận TIÊU CỰC (Scoring 48% Buy + ML Trend Giảm, RSI tiệm cận vùng quá mua 66.4) . Cảnh báo áp lực điều chỉnh lớn năm 2026, khuyên canh các nhịp kéo hồi để bán giảm tỷ trọng.
 
 
 
