@@ -12,7 +12,7 @@ Thị trường chứng khoán luôn biến động và việc ra quyết địn
 *   **Xây dựng Kho dữ liệu (DWH):** Thiết lập cơ sở dữ liệu PostgreSQL chuẩn hóa, quản lý tập trung lịch sử giá cổ phiếu hàng ngày và báo cáo tài chính 5 năm của các ngân hàng.
 *   **Mô hình Chấm điểm Định lượng (Scoring Model):** Đánh giá sức khỏe cổ phiếu hàng tháng dựa trên **13 chỉ số đa chiều** (8 chỉ báo kỹ thuật và 5 chỉ số tài chính).
 *   **Dự phóng Học máy (Machine Learning Forecasting):** Dự đoán biên độ dao động giá cổ phiếu trong năm 2026 (Giá tối thiểu, Giá trung bình, Giá cao nhất) dựa trên dữ liệu lịch sử nến tháng.
-*   **Thiết kế Dashboard Chuyên nghiệp:** Xây dựng hệ thống Power BI Dashboard gồm 3 trang tương tác trực quan với phong cách thiết kế sang trọng, đồng bộ.
+*   **Thiết kế Dashboard Chuyên nghiệp:** Xây dựng hệ thống Power BI Dashboard gồm các trang tương tác trực quan với phong cách thiết kế sang trọng, đồng bộ.
 
 ## 3. Hướng Phân Tích & Cách Xử Lý Dữ Liệu (Analytical Pipeline & Schema)
 
